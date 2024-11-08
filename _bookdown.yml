@@ -1,0 +1,49 @@
+# _bookdown.yml
+
+# Book title and author (these will appear on the title page)
+book_title: "Register Data Documentation for Reloc-Age Project"
+book_author: "Nick Christie"
+
+# Order of R Markdown files (chapters) in the document
+rmd_files:
+  - index.Rmd                # Homepage
+  - about.Rmd                # Project Overview
+  - data-sources.Rmd         # Data Sources and Provenance
+  - data-integration.Rmd     # Data Integration and Linkage
+  - data-processing.Rmd      # Data Processing and Quality Control
+  - variable-dictionary.Rmd  # Variable Dictionary
+  - variable-creation.Rmd    # Variable Creation and Transformations
+  - data-exploration.Rmd     # Exploratory Data Summaries
+  - resources.Rmd            # Data Access and Resources
+  - glossary.Rmd             # Glossary and FAQ
+  - changelog.Rmd            # Version History
+
+# Output format and directory for the book
+output_dir: "docs"           # Directory where the book will be built
+new_session: yes             # Start a new R session for each chapter
+
+# Specify output format as bs4_book
+bookdown::bs4_book:          # Use bs4_book theme
+  css: "style.css"           # Optional: add custom CSS for additional styling
+  split_by: "chapter"        # Keeps chapters separated for better navigation
+  downlit: true              # Enables syntax highlighting for code chunks
+  numbering: true            # Enable numbering of chapters and sections
+  navbar:
+    structure:
+      left: [search]         # Add search on the left
+      right: []              # Empty right section (no edit/view source buttons)
+
+# Optional settings for language and labels
+language:
+  label:
+    fig: "Figure "           # Prefix for figures
+    tab: "Table "            # Prefix for tables
+    ui:
+      chapter_name: ""       # Removes "Chapter" label from chapter titles
+
+# Global options for R chunks
+knitr:
+  opts_chunk:
+    echo: true               # Display R code chunks by default
+    warning: false           # Suppress warnings in output
+    message: false           # Suppress messages in output

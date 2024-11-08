@@ -1,0 +1,12 @@
+# _output.yml
+
+bookdown::bs4_book:
+  css: "style.css"               # Optional: add custom CSS for further customization
+  split_by: "chapter"            # Keeps chapters separated for better navigation
+  downlit: true                  # Enables syntax highlighting for code chunks
+  numbering: true                # Enable numbering of chapters and sections
+  navbar:
+    structure:
+      left: [search]
+      right: []                   # This removes "Edit" and "View source" options
+  output_dir: "_book"            # Optional: specify output directory for compiled book
