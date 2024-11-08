@@ -1,3 +1,49 @@
-# Variable creation
+# Dataset Variable Explorer
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Load necessary libraries
+library(DT)
+library(readxl)
+library(dplyr)
+
+# Load the dataset
+metadata <- read_excel("tables/Dataset_variable_lists.xlsx")
+
+# Add tooltips for Variable Description, Dataset Description, and Observations
+metadata <- metadata %>%
+  mutate(
+    `Variable name` = paste0(
+      "<span title='", Description, "'>", `Variable name`, "</span>"
+    ), 
+    `Dataset name` = paste0(    
+      "<span title='", `Dataset description`, "'>", `Dataset name`, "</span>"
+    ), 
+    `Location` = paste0(    
+      "<span title='", `Observations in Dataset`, " observations'>", `Location`, "</span>"
+    )
+  )
+
+# Render the DT table with export buttons and without dropdowns
+datatable(
+  metadata %>% select(`Variable name`, `Dataset name`, `Source`, `Location`),
+  escape = FALSE,                         # Allow HTML content for tooltips
+  extensions = 'Buttons',                 # Enable Buttons extension for download
+  options = list(
+    pageLength = 20,                      # Display 20 rows per page
+    autoWidth = TRUE,                     # Automatically adjust column widths
+    searchHighlight = TRUE,               # Highlight search matches
+    dom = 'Bfrtip',                       # Show buttons, filters, and pagination
+    buttons = c('csv', 'excel'),          # Enable CSV and Excel export
+    initComplete = JS(                    # Apply custom CSS styling
+      "function(settings, json) {",
+      "$('table').css({'font-size': '12px'});",
+      "$('table').css({'line-height': '1.2'});",
+      "$('table.dataTable').addClass('compact');",
+      "}"
+    )
+  ),
+  filter = "top"                          # Regular text filter for each column
+)
+
+```
 
