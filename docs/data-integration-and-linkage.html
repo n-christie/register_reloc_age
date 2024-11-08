@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>4 Data Integration and Linkage | Register RELOC-AGE</title>
+<meta name="author" content="Nick Christie">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta property="og:title" content="4 Data Integration and Linkage | Register RELOC-AGE">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="4 Data Integration and Linkage | Register RELOC-AGE">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.33/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><script src="libs/jszip-1.13.6/jszip.min.js"></script><link href="libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script><script src="libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script><script src="libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script><script src="libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script><link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet">
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script><link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet">
+<script src="libs/selectize-0.12.0/selectize.min.js"></script><link href="libs/dt-plugin-searchhighlight-1.13.6/source.css" rel="stylesheet">
+<script src="libs/dt-plugin-searchhighlight-1.13.6/jquery.highlight.js"></script><script src="libs/dt-plugin-searchhighlight-1.13.6/source.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="4.1 Overview A large amount of data from the registrars is accessed through Statistics Sweden (SCB). This data is delivered in text format (file extension .txt), and is partitioned, for the most...">
+<meta property="og:description" content="4.1 Overview A large amount of data from the registrars is accessed through Statistics Sweden (SCB). This data is delivered in text format (file extension .txt), and is partitioned, for the most...">
+<meta name="twitter:description" content="4.1 Overview A large amount of data from the registrars is accessed through Statistics Sweden (SCB). This data is delivered in text format (file extension .txt), and is partitioned, for the most...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Register RELOC-AGE</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Register RELOC-AGE</a></li>
+<li><a class="" href="about-the-project.html"><span class="header-section-number">2</span> About the Project</a></li>
+<li><a class="" href="data-sources-and-registers.html"><span class="header-section-number">3</span> Data Sources and Registers</a></li>
+<li><a class="active" href="data-integration-and-linkage.html"><span class="header-section-number">4</span> Data Integration and Linkage</a></li>
+<li><a class="" href="data-processing.html"><span class="header-section-number">5</span> Data Processing</a></li>
+<li><a class="" href="data-processing-and-quality-control.html"><span class="header-section-number">6</span> Data Processing and Quality Control</a></li>
+<li><a class="" href="dataset-variable-explorer.html"><span class="header-section-number">7</span> Dataset Variable Explorer</a></li>
+<li><a class="" href="resources-and-data-access.html"><span class="header-section-number">8</span> Resources and Data Access</a></li>
+<li><a class="" href="glossary.html"><span class="header-section-number">9</span> Glossary</a></li>
+<li><a class="" href="version-history.html"><span class="header-section-number">10</span> Version history</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-integration-and-linkage" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> Data Integration and Linkage<a class="anchor" aria-label="anchor" href="#data-integration-and-linkage"><i class="fas fa-link"></i></a>
+</h1>
+<div id="overview-1" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>A large amount of data from the registrars is accessed through Statistics Sweden (SCB). This data is delivered in text format (file extension .txt), and is partitioned, for the most part, into individual files separated by both year and grouped data set. While the data contained in this data originates from the specified data Registrars previously outlined, the data is received from SCB consolidated and grouped into various data sets which require further cleaning and processing. These grouped data sets are described below.</p>
+<div id="dataset-overview" class="section level3" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> Dataset overview<a class="anchor" aria-label="anchor" href="#dataset-overview"><i class="fas fa-link"></i></a>
+</h3>
+<p>Most of the descriptive data comes from LISA (lev_lisa in the table below), with more than 5 million individuals, over 128 million individual-year observations, and 95 variables across 30 years. The coverage of the other data sets is also documented, with linking of data sets possible by matching on a individual’s unique identifier, Lopnr.</p>
+<div class="inline-table"><table class="table table-responsive table-hover" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:unnamed-chunk-2">Table 4.1: </span>Dataset descriptions
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Dataset
+</th>
+<th style="text-align:left;">
+First year
+</th>
+<th style="text-align:left;">
+Last year
+</th>
+<th style="text-align:left;">
+Obs
+</th>
+<th style="text-align:left;">
+No. Variables
+</th>
+<th style="text-align:left;">
+Unique ids
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+lev_civil
+</td>
+<td style="text-align:left;">
+1998
+</td>
+<td style="text-align:left;">
+2019
+</td>
+<td style="text-align:left;">
+1523503
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+1273606
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_fodelseland
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+5687933
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+5687931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_housing
+</td>
+<td style="text-align:left;">
+2012
+</td>
+<td style="text-align:left;">
+2020
+</td>
+<td style="text-align:left;">
+29628301
+</td>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+3691638
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_in_utv
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1199921
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+813991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_ind_koord
+</td>
+<td style="text-align:left;">
+1990
+</td>
+<td style="text-align:left;">
+2019
+</td>
+<td style="text-align:left;">
+172620690
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+5713728
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_inr_flytt
+</td>
+<td style="text-align:left;">
+1998
+</td>
+<td style="text-align:left;">
+2019
+</td>
+<td style="text-align:left;">
+5794996
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+2649340
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_lisa
+</td>
+<td style="text-align:left;">
+1990
+</td>
+<td style="text-align:left;">
+2019
+</td>
+<td style="text-align:left;">
+128428907
+</td>
+<td style="text-align:left;">
+95
+</td>
+<td style="text-align:left;">
+5514771
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_partners_RTB
+</td>
+<td style="text-align:left;">
+1987
+</td>
+<td style="text-align:left;">
+2019
+</td>
+<td style="text-align:left;">
+134704934
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+5255938
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_population_personnr
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+5754023
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+5713728
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_samh
+</td>
+<td style="text-align:left;">
+1987
+</td>
+<td style="text-align:left;">
+2019
+</td>
+<td style="text-align:left;">
+82660469
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+4071181
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lev_utb_foraldrar
+</td>
+<td style="text-align:left;">
+1990
+</td>
+<td style="text-align:left;">
+2019
+</td>
+<td style="text-align:left;">
+110702340
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+3690078
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="linkage-methodology" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Linkage Methodology<a class="anchor" aria-label="anchor" href="#linkage-methodology"><i class="fas fa-link"></i></a>
+</h2>
+<p>Each dataset includes unique personal identifiers that allow for accurate matching across registers. The primary identifier used for linkage is the <strong>Personal Identity Number (PIN)</strong>, assigned to each resident in Sweden. This identifier enables the seamless integration of information from different datasets, ensuring that all data points accurately correspond to the same individual.</p>
+<div id="steps-in-the-linkage-process" class="section level3" number="4.2.1">
+<h3>
+<span class="header-section-number">4.2.1</span> Steps in the Linkage Process<a class="anchor" aria-label="anchor" href="#steps-in-the-linkage-process"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Data Standardization</strong>: Each dataset was reviewed to ensure consistent formatting of the PIN and other relevant variables used in the linkage process.</li>
+<li>
+<strong>Primary Linkage Using PIN</strong>: The Personal Identity Number serves as the primary key for linking data across registers.</li>
+<li>
+<strong>Secondary Checks</strong>: In cases where additional verification was required, variables like <strong>birth date</strong> and <strong>sex</strong> were used to confirm the linkage.</li>
+</ol>
+</div>
+<div id="example-linkage" class="section level3" number="4.2.2">
+<h3>
+<span class="header-section-number">4.2.2</span> Example Linkage<a class="anchor" aria-label="anchor" href="#example-linkage"><i class="fas fa-link"></i></a>
+</h3>
+<p>An example of the linkage process would involve connecting records from the <strong>Total Population Register</strong> and the <strong>National Patient Register</strong>. Using the PIN, we link demographic data (e.g., birth date, sex, migration details) with health data (e.g., diagnoses, treatments) for the same individual. This linkage enables us to analyze health outcomes in the context of demographic factors.</p>
+</div>
+</div>
+<div id="challenges-in-data-integration" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Challenges in Data Integration<a class="anchor" aria-label="anchor" href="#challenges-in-data-integration"><i class="fas fa-link"></i></a>
+</h2>
+<p>Integrating multiple large datasets poses several challenges, including:</p>
+<ul>
+<li>
+<strong>Inconsistent Data Formats</strong>: Some datasets required reformatting to ensure compatibility across registers. For example, date formats and categorical variables like employment status were standardized.</li>
+<li>
+<strong>Missing or Incomplete Data</strong>: Some records in individual registers had missing values for certain variables, particularly for older data entries. Missing values were managed carefully to avoid biases in analyses.</li>
+<li>
+<strong>Changes Over Time</strong>: Registers have undergone updates, including changes in variable definitions and data collection methods. These changes were documented and accounted for during integration to maintain data consistency.</li>
+</ul>
+</div>
+<div id="quality-control-measures" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> Quality Control Measures<a class="anchor" aria-label="anchor" href="#quality-control-measures"><i class="fas fa-link"></i></a>
+</h2>
+<p>To ensure the accuracy of the integrated dataset, the following quality control measures were implemented:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Cross-Verification</strong>: After linkage, a subset of records was cross-verified across multiple registers. For example, age, sex, and other demographic details were compared across sources to confirm consistency.</li>
+<li>
+<strong>Missing Data Checks</strong>: Missing values were flagged and examined to assess their impact on analyses. Imputation methods were applied only where it was appropriate, and records with critical missing information were handled based on predefined rules.</li>
+<li>
+<strong>Duplicate Record Removal</strong>: Each dataset was checked for duplicate entries based on the PIN and relevant timestamp information, ensuring only unique records per individual and time point.</li>
+</ol>
+</div>
+<div id="data-processing-pipeline" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> Data Processing Pipeline<a class="anchor" aria-label="anchor" href="#data-processing-pipeline"><i class="fas fa-link"></i></a>
+</h2>
+<p>The integration process follows a structured data processing pipeline:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Data Extraction</strong>: Data is extracted from each register using standardized methods, ensuring that only necessary variables and records are included.</li>
+<li>
+<strong>Cleaning and Transformation</strong>: Each dataset undergoes cleaning and transformation, including standardization of formats, handling of missing values, and filtering for relevant time periods.</li>
+<li>
+<strong>Linkage and Verification</strong>: Datasets are linked using the PIN, with additional verification steps applied to ensure accuracy.</li>
+<li>
+<strong>Final Quality Assurance</strong>: The integrated dataset undergoes a final quality check, including consistency checks and validation against known statistics (e.g., population demographics).</li>
+</ol>
+</div>
+<div id="ethical-considerations" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> Ethical Considerations<a class="anchor" aria-label="anchor" href="#ethical-considerations"><i class="fas fa-link"></i></a>
+</h2>
+<p>Due to the sensitive nature of the data, strict ethical guidelines were followed throughout the integration process. All personal identifiers were handled in compliance with data privacy regulations, and access to identifiable information was restricted to authorized personnel only.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="data-sources-and-registers.html"><span class="header-section-number">3</span> Data Sources and Registers</a></div>
+<div class="next"><a href="data-processing.html"><span class="header-section-number">5</span> Data Processing</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data-integration-and-linkage"><span class="header-section-number">4</span> Data Integration and Linkage</a></li>
+<li>
+<a class="nav-link" href="#overview-1"><span class="header-section-number">4.1</span> Overview</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#dataset-overview"><span class="header-section-number">4.1.1</span> Dataset overview</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#linkage-methodology"><span class="header-section-number">4.2</span> Linkage Methodology</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#steps-in-the-linkage-process"><span class="header-section-number">4.2.1</span> Steps in the Linkage Process</a></li>
+<li><a class="nav-link" href="#example-linkage"><span class="header-section-number">4.2.2</span> Example Linkage</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#challenges-in-data-integration"><span class="header-section-number">4.3</span> Challenges in Data Integration</a></li>
+<li><a class="nav-link" href="#quality-control-measures"><span class="header-section-number">4.4</span> Quality Control Measures</a></li>
+<li><a class="nav-link" href="#data-processing-pipeline"><span class="header-section-number">4.5</span> Data Processing Pipeline</a></li>
+<li><a class="nav-link" href="#ethical-considerations"><span class="header-section-number">4.6</span> Ethical Considerations</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Register RELOC-AGE</strong>" was written by Nick Christie. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
