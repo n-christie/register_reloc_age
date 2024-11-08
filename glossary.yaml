@@ -1,0 +1,15 @@
+terms:
+  - term: Age Group
+    definition: A categorical variable classifying individuals into age brackets (e.g., Young, Middle-aged, Senior).
+
+  - term: Chronic Condition
+    definition: A long-term health condition that requires ongoing management, such as diabetes or hypertension.
+
+  - term: Data Integration
+    definition: The process of combining data from different sources to create a unified dataset for analysis.
+
+  - term: Personal Identity Number (PIN)
+    definition: A unique identifier assigned to residents in Sweden, used for linking data across registers.
+  
+  - term: Socioeconomic Variables
+    definition: Variables that capture an individual's economic and social position, including income and employment status.

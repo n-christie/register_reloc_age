@@ -1,0 +1,32 @@
+
+
+# Glossary
+
+This section provides definitions for key terms used throughout the documentation.
+
+```{r setup, include=FALSE}
+# Load necessary libraries
+library(yaml)
+library(dplyr)
+library(knitr)
+
+# Load the glossary terms from the YAML file
+glossary <- yaml::read_yaml("glossary.yaml")$terms
+
+# Create a data frame from the glossary list
+glossary_df <- do.call(rbind, lapply(glossary, as.data.frame)) %>% 
+  arrange(term)
+
+# Conditional rendering based on output type
+if (knitr::is_html_output()) {
+  # Use DT for interactive HTML table
+  library(DT)
+  datatable(glossary_df, 
+            colnames = c("Term", "Definition"), 
+            options = list(pageLength = 10, autoWidth = TRUE))
+} else {
+  # Use kable for static PDF-compatible table
+  knitr::kable(glossary_df, col.names = c("Term", "Definition"))
+}
+```
+
