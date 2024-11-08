@@ -1,8 +1,121 @@
 # Data Integration and Linkage
 
+
+
+
 ## Overview
 
-This project combines data from multiple register sources provided by Statistics Sweden (SCB) and the National Board of Health and Welfare. Integrating these datasets enables comprehensive analyses of housing choices, health outcomes, socioeconomic status, and demographic trends. The integration process primarily involves linking individual records across datasets using unique identifiers and ensuring data consistency across time and sources.
+A large amount of data from the registrars is accessed through Statistics Sweden (SCB).  This data is delivered in text format (file extension .txt), and is partitioned, for the most part, into individual files separated by both year and grouped data set.  While the data contained in this data originates from the specified data Registrars previously outlined, the data is received from SCB consolidated and grouped into various data sets which require further cleaning and processing.  These grouped data sets are described below. 
+
+
+### Dataset overview
+
+
+Most of the descriptive data comes from LISA (lev_lisa in the table below), with more than 5 million individuals, over 128 million individual-year observations, and 95 variables across 30 years.  The coverage of the other data sets is also documented, with linking of data sets possible by matching on a individual's unique identifier, Lopnr.
+
+<table class="table table-responsive table-hover" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">(\#tab:unnamed-chunk-2)Dataset descriptions</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Dataset </th>
+   <th style="text-align:left;"> First year </th>
+   <th style="text-align:left;"> Last year </th>
+   <th style="text-align:left;"> Obs </th>
+   <th style="text-align:left;"> No. Variables </th>
+   <th style="text-align:left;"> Unique ids </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> lev_civil </td>
+   <td style="text-align:left;"> 1998 </td>
+   <td style="text-align:left;"> 2019 </td>
+   <td style="text-align:left;"> 1523503 </td>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:left;"> 1273606 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_fodelseland </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> 5687933 </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 5687931 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_housing </td>
+   <td style="text-align:left;"> 2012 </td>
+   <td style="text-align:left;"> 2020 </td>
+   <td style="text-align:left;"> 29628301 </td>
+   <td style="text-align:left;"> 23 </td>
+   <td style="text-align:left;"> 3691638 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_in_utv </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> 1199921 </td>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:left;"> 813991 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_ind_koord </td>
+   <td style="text-align:left;"> 1990 </td>
+   <td style="text-align:left;"> 2019 </td>
+   <td style="text-align:left;"> 172620690 </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 5713728 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_inr_flytt </td>
+   <td style="text-align:left;"> 1998 </td>
+   <td style="text-align:left;"> 2019 </td>
+   <td style="text-align:left;"> 5794996 </td>
+   <td style="text-align:left;"> 7 </td>
+   <td style="text-align:left;"> 2649340 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_lisa </td>
+   <td style="text-align:left;"> 1990 </td>
+   <td style="text-align:left;"> 2019 </td>
+   <td style="text-align:left;"> 128428907 </td>
+   <td style="text-align:left;"> 95 </td>
+   <td style="text-align:left;"> 5514771 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_partners_RTB </td>
+   <td style="text-align:left;"> 1987 </td>
+   <td style="text-align:left;"> 2019 </td>
+   <td style="text-align:left;"> 134704934 </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 5255938 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_population_personnr </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> 5754023 </td>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:left;"> 5713728 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_samh </td>
+   <td style="text-align:left;"> 1987 </td>
+   <td style="text-align:left;"> 2019 </td>
+   <td style="text-align:left;"> 82660469 </td>
+   <td style="text-align:left;"> 14 </td>
+   <td style="text-align:left;"> 4071181 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> lev_utb_foraldrar </td>
+   <td style="text-align:left;"> 1990 </td>
+   <td style="text-align:left;"> 2019 </td>
+   <td style="text-align:left;"> 110702340 </td>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:left;"> 3690078 </td>
+  </tr>
+</tbody>
+</table>
 
 ## Linkage Methodology
 

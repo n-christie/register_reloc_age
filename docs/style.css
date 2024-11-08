@@ -55,3 +55,7 @@ a:hover {
 .book-pagination {
     display: none !important;
 }
+
+.mt-5 {
+    display: none !important;
+}

@@ -1,8 +1,45 @@
 # Data Integration and Linkage
 
+```{r, include=FALSE}
+library(here)
+library(tidyverse)
+library(kableExtra)
+```
+
+
 ## Overview
 
-This project combines data from multiple register sources provided by Statistics Sweden (SCB) and the National Board of Health and Welfare. Integrating these datasets enables comprehensive analyses of housing choices, health outcomes, socioeconomic status, and demographic trends. The integration process primarily involves linking individual records across datasets using unique identifiers and ensuring data consistency across time and sources.
+A large amount of data from the registrars is accessed through Statistics Sweden (SCB).  This data is delivered in text format (file extension .txt), and is partitioned, for the most part, into individual files separated by both year and grouped data set.  While the data contained in this data originates from the specified data Registrars previously outlined, the data is received from SCB consolidated and grouped into various data sets which require further cleaning and processing.  These grouped data sets are described below. 
+
+
+### Dataset overview
+
+
+Most of the descriptive data comes from LISA (lev_lisa in the table below), with more than 5 million individuals, over 128 million individual-year observations, and 95 variables across 30 years.  The coverage of the other data sets is also documented, with linking of data sets possible by matching on a individual's unique identifier, Lopnr.
+
+```{r, echo=FALSE}
+
+
+df_registers <- readRDS(here("tables", "register_obs.rds"))
+df_reg_time <- readRDS(here("tables", "register_obs_time.rds")) %>% 
+  mutate(X1987 = if_else(Register == "lev_partners_RTB", "5108973",
+                         if_else(Register == "lev_samh", "3092138", "-")))
+  
+
+
+ kable(df_registers,
+      "html",
+      caption = "Dataset descriptions",
+      linesep = "",
+      booktabs = TRUE,
+      align = "ll",
+      col.names = c("Dataset", "First year", "Last year", "Obs", "No. Variables", "Unique ids"),
+      escape=FALSE) %>% 
+  kable_styling(bootstrap_options = c( "responsive", "hover"), font_size = 11) 
+ 
+
+
+```
 
 ## Linkage Methodology
 

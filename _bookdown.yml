@@ -44,6 +44,7 @@ language:
 # Global options for R chunks
 knitr:
   opts_chunk:
-    echo: true               # Display R code chunks by default
+    echo: false               # Display R code chunks by default
     warning: false           # Suppress warnings in output
     message: false           # Suppress messages in output
+    results: "asis"          # Hide output of R code chunks

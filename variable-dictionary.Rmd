@@ -43,7 +43,7 @@ library(dplyr)
 # Load the dataset
 metadata <- read_excel("tables/Dataset_variable_lists.xlsx")
 
-# Add tooltips for Variable Description
+# Add tooltips for Variable Description, Dataset Description, and Observations
 metadata <- metadata %>%
   mutate(
     `Variable name` = paste0(
@@ -53,22 +53,30 @@ metadata <- metadata %>%
       "<span title='", `Dataset description`, "'>", `Dataset name`, "</span>"
     ), 
     `Location` = paste0(    
-      "<span title='", `Observations in Dataset`," obs", "'>", `Location`, "</span>"
-    ), 
+      "<span title='", `Observations in Dataset`, " observations'>", `Location`, "</span>"
+    )
   )
 
-# Render the DT table without dropdowns, using regular text-based filters
+# Render the DT table with export buttons and without dropdowns
 datatable(
-  metadata %>% select( `Variable name`, `Dataset name`, `Source`, `Location`),
-  escape = FALSE,  # Allows HTML content in cells for tooltips
+  metadata %>% select(`Variable name`, `Dataset name`, `Source`, `Location`),
+  escape = FALSE,                         # Allow HTML content for tooltips
+  extensions = 'Buttons',                 # Enable Buttons extension for download
   options = list(
-    pageLength = 20,              # Number of rows per page
-    autoWidth = FALSE,             # Automatically adjust column widths
-    searchHighlight = TRUE,       # Highlight search matches
-    dom = 'Bfrtip',               # Show buttons for exporting and filtering
-    buttons = c('csv', 'excel')   # Allow CSV and Excel export
+    pageLength = 20,                      # Display 20 rows per page
+    autoWidth = TRUE,                     # Automatically adjust column widths
+    searchHighlight = TRUE,               # Highlight search matches
+    dom = 'Bfrtip',                       # Show buttons, filters, and pagination
+    buttons = c('csv', 'excel'),          # Enable CSV and Excel export
+    initComplete = JS(                    # Apply custom CSS styling
+      "function(settings, json) {",
+      "$('table').css({'font-size': '12px'});",
+      "$('table').css({'line-height': '1.2'});",
+      "$('table.dataTable').addClass('compact');",
+      "}"
+    )
   ),
-  filter = "top"                  # Regular text filter for each column
+  filter = "top"                          # Regular text filter for each column
 )
 
 ```

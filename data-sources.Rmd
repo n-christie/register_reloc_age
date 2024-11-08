@@ -1,20 +1,40 @@
-# Data Sources and Provenance
+# Data Sources and Registers
 
 ## Overview
 
-This project utilizes comprehensive register data from Statistics Sweden (SCB) to analyze housing choices and health outcomes among individuals aged 55 and above. The datasets encompass demographic information, health records, socioeconomic status, and housing details, providing a robust foundation for our research.
+```{r, include=FALSE}
+library(here)
+library(tidyverse)
+library(kableExtra)
+```
 
-## Data Source Summary
+The study period in Register RELOC-AGE ranges from 1990-2020 and is comprised of 13 registers with staggered coverage which is illustrated below. 
 
-| Data Source             | Description                                             | Time Period | Key Variables                          | Data Provider     |
-|-------------------------|---------------------------------------------------------|-------------|----------------------------------------|-------------------|
-| Total Population Register | Contains demographic information for all residents     | 1968–2022   | Personal identity number, birth date, sex, marital status, country of birth, citizenship, migration details | Statistics Sweden |
-| Longitudinal Integration Database for Health Insurance and Labour Market Studies (LISA) | Integrates data on employment, income, and social benefits | 1990–2022   | Employment status, income levels, educational attainment, social benefits received | Statistics Sweden |
-| National Patient Register | Records inpatient and outpatient care details          | 1987–2022   | Diagnoses, treatments, hospital admissions and discharges | National Board of Health and Welfare |
-| Cause of Death Register  | Provides information on mortality and causes of death   | 1961–2022   | Date of death, underlying and contributing causes of death | National Board of Health and Welfare |
-| Dwelling Register        | Contains data on housing and living conditions          | 2012–2022   | Type of dwelling, ownership status, household composition | Statistics Sweden |
+```{r,echo=FALSE, out.width="100%"}
 
-Each data source contributes unique insights relevant to our research objectives, as described below.
+knitr::include_graphics("figures/timeline_registers_update.png")
+```
+
+The table below gives a description of the various registers,
+noting the types of variables contained within.
+
+```{r, echo=FALSE}
+
+register_tbl <- readRDS( "tables/register_tbl.rds") 
+
+ kable(register_tbl,
+      "html",
+      caption = "Register descriptions",
+      linesep = "",
+      booktabs = TRUE,
+      align = "ll",
+      escape=FALSE) %>% 
+  kable_styling(bootstrap_options = c( "responsive"), font_size = 11) %>%
+    scroll_box(width = "800px", height = "500px")
+
+
+```
+
 
 ## Total Population Register
 

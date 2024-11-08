@@ -2,72 +2,63 @@
 
 ## Background
 
-The Reloc-Age project investigates how housing choices and relocations impact active and healthy aging among individuals aged 55 and above. By analyzing patterns in housing decisions and their effects on health outcomes, the project aims to generate significant insights into the aging process.
+The Register RELOC-AGE prjoect is an essential part of the overall RELOC-AGE Program.  The program investigates how housing choices and revocations impact active and healthy aging among individuals aged 55 and above. By analyzing patterns in housing decisions and their effects on health outcomes, the project aims to generate significant insights into the aging process.
 
-## Objectives
+## Project Objectives
 
-The primary objectives of the Reloc-Age project are:
+The main objectives of the RELOC-AGE project are to:
 
-- **Study Housing Choices and Relocation Patterns**: Examine trends over time and by age in housing types and tenures among the Swedish population aged 55+.
-
-- **Assess Health Outcomes**: Analyze how housing aspects and relocations affect future health outcomes, considering factors such as age, sex, civil status, country of origin, adverse health events, loss of a partner, socio-economic status, and neighborhood characteristics.
-
-- **Develop Housing Counseling Interventions**: Create and pilot a novel housing counseling intervention tailored for older adults considering relocation.
-
-- **Contribute to Theory Development**: Advance theoretical frameworks related to housing choices, relocation, and active aging.
+1. **Study housing choices, relocation, and health patterns in the Swedish population aged 55+ (Register RELOC-AGE).**
+2. **Examine the effects of housing choices and relocation on active and healthy ageing among individuals considering relocation aged 55+ (Prospective RELOC-AGE).**
+3. **Complete the development of a novel housing counseling intervention and conduct a pilot study (Intervention RELOC-AGE).**
+4. **Contribute to theory development on housing choices, relocation, and active ageing (Theory RELOC-AGE).**
 
 ## Research Questions
 
-The project addresses several key research questions:
+The project is guided by several research questions, which are categorized as follows:
 
-1. What are the trends over time and by age regarding housing types and tenures?
+### Housing Trends and Health Impacts
 
-2. How do housing aspects and relocations affect future health outcomes?
+1. **What are the trends in housing types and tenures over time by age?**
+2. **How do housing aspects and relocation decisions influence future health outcomes?**
 
-   - How are these patterns influenced by factors such as age, sex, civil status, country of origin, adverse health events, loss of a partner, socio-economic status, and neighborhood characteristics?
+    - How are these patterns affected by factors such as age, sex, civil status, country of origin, adverse health events, loss of a partner, socio-economic and neighborhood characteristics?
+    - Given equal propensity of relocation based on demographic, socio-economic, and health characteristics, how do specific housing decisions affect future health outcomes?
 
-   - Given equal propensity for relocation based on baseline demographic, socio-economic, and health characteristics, how do specific housing decisions impact future health outcomes?
+### Adverse Health Events and Relocation Patterns
 
-3. What are the effects of adverse health events on housing choices and relocation patterns?
+1. **What are the effects of adverse health events on housing choices and relocation?**
+    - What are the short- and long-term effects?
+    - How do these effects differ by gender, disease or disability profiles, civil status, country of origin, and socio-economic status?
 
-   - What are the short- and long-term effects?
+### Housing and Health Predictors of Relocation
 
-   - How do these effects differ between men and women, across different disease and/or disability profiles, civil status, country of origin, and socio-economic status?
+1. **Which aspects of housing and health predict:**
+    - Relocation to different housing options within the general housing market?
+    - Relocation to residential care facilities?
+    - Remaining in one's current dwelling?
 
-4. What aspects of housing and health predict:
+### Housing, Social Aspects, and Active Ageing
 
-   - Relocation to different housing options in the ordinary housing stock
+1. **How do objective and perceived aspects of housing and social factors interact with active and healthy ageing?**
+2. **What are the characteristics and trajectories of these dynamics?**
 
-   - Relocation to residential care facilities
+### Housing Preferences in Older Adults
 
-   - Remaining in the present dwelling
+1. **Which housing attributes are important for older adults considering relocation?**
+2. **How do they prioritize these attributes in their decision-making?**
+3. **What reasoning do older adults use when considering relocation options?**
+    - What are their motives for considering and implementing relocation?
+    - To what extent are their motives fulfilled?
 
-5. How is the complex interaction between objective and perceived aspects of housing and social factors associated with active and healthy aging, and what are the characteristics and trajectories of such dynamics?
+### Housing Counselling Intervention
 
-6. What housing attributes do older adults considering relocation find important, and to what extent, when making their decisions on housing preferences?
+1. **Is the newly developed housing counseling intervention feasible, usable, and acceptable within the Swedish municipal context?**
+2. **What are the pros and cons of different delivery formats for this intervention?**
+3. **Which outcomes should be used to evaluate the effectiveness of housing counseling?**
+    - Responsiveness and impact on primary and secondary outcomes, as demonstrated by the pilot study.
 
-7. How do older adults considering relocation reason regarding:
+### Theory Development
 
-   - Different housing options
+1. **What are the core concepts and pathways for a theory on housing choices, relocation, and active ageing?**
 
-   - Motives for considering and effectuating relocation
-
-   - To what extent are their motives fulfilled?
-
-8. Is the newly developed housing counseling intervention usable, feasible, and acceptable for the Swedish municipality context, and what are the pros and cons of different delivery formats?
-
-9. Which outcomes should be used to investigate the effectiveness of housing counseling, and what are:
-
-   - The responsiveness and
-
-   - The intervention effects on the selected primary and secondary outcomes, as indicated by the results of the pilot study?
-
-10. What are the main concepts and pathways of a theory on housing choices, relocation, and active aging?
-
-## Team
-
-The Reloc-Age project is conducted by a multidisciplinary team of researchers specializing in gerontology, public health, sociology, and housing studies. The team's diverse expertise ensures a comprehensive approach to understanding the complexities of housing and aging.
-
-## Funding and Acknowledgments
-
-This project is funded by [Funding Organization], supporting research initiatives aimed at improving the quality of life for older adults. We extend our gratitude to all participants and collaborators who contribute to the success of this study.
