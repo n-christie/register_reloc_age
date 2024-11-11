@@ -27,7 +27,7 @@ metadata <- read_excel("tables/Dataset_variable_lists.xlsx")
 metadata <- metadata %>%
   mutate(
     Notes = gsub("\\[partners\\]\\(#partners\\)", 
-                 paste0("<a href='", base_url, "/#partners'>partners</a>"), 
+                 paste0("<a href='", base_url, "#partners'>partners</a>"), 
                  Notes)
   )
 
