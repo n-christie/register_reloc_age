@@ -74,3 +74,36 @@ We can examine some cross tabulations of our new __special_housing__ variable ( 
 
 knitr::include_graphics(here("figures", "special_housing.png"))
 ```
+
+
+### Number of visits {#visits}
+
+#### Slutvård
+
+Patient visits documented in the Slutvård data set are recorded in a manner which makes counting the number of stays in a particular period challenging.
+Often is the case where a patient will check out on a particular date, and check back in on the exact same date.
+While a cursory glance might lead one to conclude this phenomenon is the result of consecutive accidents or hospitalizations, the sheer number of occurrences of these back to back visits leads us to another conclusion - that when patients move from one ward to another, from the emergency room to the recovery ward for example, each record is recorded as a separate occurrence in the data set. 
+
+Therefore these back-to-back observations are combined and counted as one visit under the assumption they represent the transfer of the patient from one ward or clinic to another.  Calculations and conclusions are treated as such.  To illustrate, in the above example, the we can see that the last two hopitalizations are back to back: the individual checks out on 09-30, then checks back in on the same date.  When calculating the number of days hospitalized for this particular visit the individual experienced, we would sum the two values of days hospitalized ( 4 days and 16 days) to arrive at a combined total (of 20 days).
+
+### Identifying relocations 
+
+To identify when an individual has relocated in the data the following considerations are taken into account.
+
+* The housing variables, __fast_lopnr__ and __lghlopnr__ appear to uniquely identify the housing location of a particular individual.  Over time, a change in either variable should indicate that an individual as relocated (highlighted in orange below).  This change appears to be the best indicator of whether an individual has relocated or not. 
+
+
+```{r,out.width="100%", echo=FALSE}
+
+knitr::include_graphics(here("figures", "relocation_id.png"))
+```
+
+* The coordinate variables, __xkoord__ and __ykoord__ appear to be occasionally inconsistent, giving different values for the same  __fast_lopnr__ and __lghlopnr__ identifier in some of the data.  This may be the result of data errors or possibly a GPS margin of error when measuring housing location (Highlighted yellow).
+
+*	The variable __n_housing__ counts how many unique __fast_lopnr__’s are associated with each __lopnr__.  For example, individual RED, has resided in three locations, Individual BLUE has resided in two locations, and Individual 40  has resided in one location during the sample period.
+
+*	The variables __change_housing__  and __change_tenure__ take the before and after values of __housing__  and __tenure__ (respectively) and return the before and after categories when a change (relocation) has occurred.
+
+*	__Byggtyp__ appears to follow the patterns of __fast_lopnr__ and __lghlopnr__, but contains some missing data.  The missing __Byggtyp__ value seems to be associated with the values “Övriga hus” and “Specialböstader” in __housing__. 
+
+
