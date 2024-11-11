@@ -17,25 +17,30 @@ library(dplyr)
 library(htmltools)
 
 # Define the base URL for your bookdown site
-base_url <- "https://n-christie.github.io/register_reloc_age/appendix.html"
-# Load the dataset
+base_url <- "https://yourbookdownsite.com/register_reloc_age/docs/appendix.html"
 
 # Load the dataset from Excel
 metadata <- read_excel("tables/Dataset_variable_lists.xlsx")
 
-# Convert Markdown-style internal links in Notes to absolute URLs
+# Ensure Notes is treated as character and replace NA with empty strings
+metadata <- metadata %>%
+  mutate(Notes = ifelse(is.na(Notes), "", as.character(Notes)))
+
+# Manually replace specific Markdown-style links in Notes with absolute URLs
 metadata <- metadata %>%
   mutate(
     Notes = gsub("\\[partners\\]\\(#partners\\)", 
                  paste0("<a href='", base_url, "#partners'>partners</a>"), 
+                 Notes),
+    Notes = gsub("\\[visits\\]\\(#visits\\)", 
+                 paste0("<a href='", base_url, "#visits'>visits</a>"), 
                  Notes)
   )
 
-# Render reactable with Notes as a separate column
+# Render reactable with Notes as a separate column and Dataset name in expandable section
 reactable(
   metadata %>% select(`Variable name`, `Description - SWE`, `Description - ENG`, `Notes`), # Include Notes in main columns
   filterable = TRUE,                                  # Enable column filtering
-  style = list(fontSize = "10px"), 
   searchable = TRUE,                                  # Enable global search
   pagination = TRUE,                                  # Enable pagination
   defaultPageSize = 20,                               # Show 20 rows per page
@@ -48,19 +53,21 @@ reactable(
     `Description - ENG` = colDef(name = "Description (ENG)"),
     Notes = colDef(html = TRUE, name = "Notes")        # Render Notes as HTML for clickable links
   ),
-  # Set up expandable row details for additional variables
+  # Set up expandable row details to include additional variables, including Dataset name
   details = function(index) {
     row_data <- metadata[index, ]
     htmltools::tags$div(
       style = "padding: 10px;",
-      htmltools::tags$strong("Location: "), row_data$Location, htmltools::tags$br(),
-      htmltools::tags$strong("Source: "), row_data$Source, htmltools::tags$br(),
+      htmltools::tags$strong("Dataset name: "), row_data$`Dataset name`, htmltools::tags$br(),
       htmltools::tags$strong("Dataset description: "), row_data$`Dataset description`, htmltools::tags$br(),
       htmltools::tags$strong("Observations in Dataset: "), row_data$`Observations in Dataset`, htmltools::tags$br(),
+      htmltools::tags$strong("Location: "), row_data$Location, htmltools::tags$br(),
+      htmltools::tags$strong("Source: "), row_data$Source, htmltools::tags$br(),
       htmltools::tags$strong("Delivery file: "), row_data$`Delivery file`, htmltools::tags$br(),
       htmltools::tags$strong("Link: "), htmltools::tags$a(href = row_data$Link, target = "_blank", row_data$Link)
     )
   }
 )
+
 ```
 
