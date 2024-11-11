@@ -41,6 +41,7 @@ metadata <- metadata %>%
 reactable(
   metadata %>% select(`Variable name`, `Description - SWE`, `Description - ENG`, `Notes`), # Include Notes in main columns
   filterable = TRUE,                                  # Enable column filtering
+  style = list(fontSize = "12px"), 
   searchable = TRUE,                                  # Enable global search
   pagination = TRUE,                                  # Enable pagination
   defaultPageSize = 20,                               # Show 20 rows per page
