@@ -17,7 +17,7 @@ library(dplyr)
 library(htmltools)
 
 # Define the base URL for your bookdown site
-base_url <- "https://yourbookdownsite.com/register_reloc_age/docs/appendix.html"
+base_url <- "https://n-christie.github.io/register_reloc_age/appendix.html"
 
 # Load the dataset from Excel
 metadata <- read_excel("tables/Dataset_variable_lists.xlsx")
