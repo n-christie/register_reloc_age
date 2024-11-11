@@ -16,6 +16,7 @@ rmd_files:
   - data-exploration.Rmd     # Exploratory Data Summaries
   - resources.Rmd            # Data Access and Resources
   - glossary.Rmd             # Glossary and FAQ
+  - appendix.Rmd
   - changelog.Rmd            # Version History
 
 # Output format and directory for the book

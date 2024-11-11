@@ -41,10 +41,6 @@ identifying-relocations
 descriptive-statistics
 specific-data-considerations
 translating-types-of-housing-and-tenure
-identifying-partners
-identifying-change-in-kommun
-identifying-household-size
-identifying-special-housing
 data-processing-and-quality-control
 overview-2
 variable-standardization
@@ -57,4 +53,10 @@ code-repository
 reference-materials
 contact-and-support
 glossary
+appendix
+constructed-variables
+partners
+identifying-change-in-kommun
+identifying-household-size
+identifying-special-housing
 version-history

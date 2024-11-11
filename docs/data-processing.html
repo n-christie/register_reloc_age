@@ -59,7 +59,8 @@
 <li><a class="" href="dataset-variable-explorer.html"><span class="header-section-number">7</span> Dataset Variable Explorer</a></li>
 <li><a class="" href="resources-and-data-access.html"><span class="header-section-number">8</span> Resources and Data Access</a></li>
 <li><a class="" href="glossary.html"><span class="header-section-number">9</span> Glossary</a></li>
-<li><a class="" href="version-history.html"><span class="header-section-number">10</span> Version history</a></li>
+<li><a class="" href="appendix.html"><span class="header-section-number">10</span> Appendix</a></li>
+<li><a class="" href="version-history.html"><span class="header-section-number">11</span> Version history</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -254,53 +255,6 @@ Upplåtelseform Lägenheternas upplåtelseform utgår från ägarförhållandet 
 <p>Källa SCB, bearbetat av Susanne, 2022-09-08</p>
 <p>Fotnot SCB:
 Både nyproducerade och existerande lägenheter, vilka tidigare utgjort bortfall i registret, registreras löpande. Därutöver sker rättningar och kompletteringar av tidigare felaktiga uppgifter samt till följd av att det befintliga beståndet förändras, t.ex. genom ombyggnad och rivning. Största delen av de lägenheter som redovisas som specialbostäder och övriga hus från 2013 och framåt ingick tidigare i kategorin flerbostadshus.</p>
-</div>
-<div id="identifying-partners" class="section level3" number="5.4.2">
-<h3>
-<span class="header-section-number">5.4.2</span> Identifying partners<a class="anchor" aria-label="anchor" href="#identifying-partners"><i class="fas fa-link"></i></a>
-</h3>
-<p>There are some discrepancies in the data when finding consistent partner matches to unique individuals across the multiple data sets.</p>
-<p>We can find partner data in two of the datasets: <strong>partners_rtb</strong> and <strong>samh</strong>. In the <strong>partners_rtb</strong> dataset, we have three variables for every lopnr-year observation:</p>
-<ul>
-<li>Lopnrsamh – (no definition given in the excel sheet) 1987-1997.</li>
-<li>Lopnrsambo – “sambo’s personummer” from 1998.</li>
-<li>Lopnrmakpart – “make/maka/partners personummer” ( I believe this is technically married) from 1998.</li>
-</ul>
-<p>From the <strong>samh</strong> dataset, we have one variable:
-* LopNrSamh – (no definition given in the accompanying excel sheet).</p>
-<p>Since no particular partner variable was consistent over time, a new varaible is created, “partner”, that takes the value of whichever variable has valid data (of one of the above variables) for that lopnr/year. If there are two values, the priority is for the lopnrsamh from the <strong>partners_rtb</strong> dataset (it seems to have the best coverage).</p>
-<p>A screenshot for an particular individual with multiple partners over time to illustrate.</p>
-<div class="inline-figure"><img src="figures/partners_png.PNG" width="100%"></div>
-</div>
-<div id="identifying-change-in-kommun" class="section level3" number="5.4.3">
-<h3>
-<span class="header-section-number">5.4.3</span> Identifying change in kommun<a class="anchor" aria-label="anchor" href="#identifying-change-in-kommun"><i class="fas fa-link"></i></a>
-</h3>
-<p>In the same fashion as identifying the change in a housing over time for an individual, we can observe when an individual has relocated outside of a geographical area when the geographical indicator changes. Variables may then be created to capture this trend.</p>
-</div>
-<div id="identifying-household-size" class="section level3" number="5.4.4">
-<h3>
-<span class="header-section-number">5.4.4</span> Identifying household size<a class="anchor" aria-label="anchor" href="#identifying-household-size"><i class="fas fa-link"></i></a>
-</h3>
-<p>As size of household is not present in the data (number of individuals inhabiting a particular residence),
-and estimate is constructed by the following combination of data items.
-First, total number of children living at the residence is calculated by summing the items: barn_0_3, barn_4_6,barn_7_10_barn_11_15, and barn_16_17.
-This estimate is augmented by 1 in the case of an individual living without a partner (no partner data available), or by 2 if a partner is living with that individual.
-For example, an individual who has 2 children and living with a partner would have an calculated household size of 4 (2 children + 1 partner + 1 self)</p>
-</div>
-<div id="identifying-special-housing" class="section level3" number="5.4.5">
-<h3>
-<span class="header-section-number">5.4.5</span> Identifying special housing<a class="anchor" aria-label="anchor" href="#identifying-special-housing"><i class="fas fa-link"></i></a>
-</h3>
-<p>A particular housing situation in the context of healthy aging is that of special housing, taken to be composed predominantly of care home type housing options.
-This attention has warranted a deeper look at how we can accurately identify whether or not an individual resides in a special housing. These are the considerations:</p>
-<ul>
-<li>Special housing may have entries in either the <strong>municipal registers</strong> or the <strong>Fastigehtsregister</strong>.</li>
-<li>In the <strong>municiple register</strong> we identify special housing when the variable <strong>sbo</strong> is equal to <strong>1</strong>, or when the variable <strong>boskat</strong> is equal to <strong>2</strong>. We create a new variable, <strong>special_housing</strong>, when either one of these conditions are true.</li>
-<li>In the <strong>Fastigehtsregister</strong> we identify special housing when the variable <strong>scb_boskat</strong> is equal to <strong>1</strong>.</li>
-</ul>
-<p>We can examine some cross tabulations of our new <strong>special_housing</strong> variable ( from the municiple register) and the <strong>scb_bostkat</strong> variable from Fastigehtsregister (which takes on the value of 1 when special housing)</p>
-<div class="inline-figure"><img src="figures/special_housing.png" width="100%"></div>
 
 </div>
 </div>
@@ -328,13 +282,7 @@ This attention has warranted a deeper look at how we can accurately identify whe
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#specific-data-considerations"><span class="header-section-number">5.4</span> Specific data considerations</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#translating-types-of-housing-and-tenure"><span class="header-section-number">5.4.1</span> Translating types of housing and tenure</a></li>
-<li><a class="nav-link" href="#identifying-partners"><span class="header-section-number">5.4.2</span> Identifying partners</a></li>
-<li><a class="nav-link" href="#identifying-change-in-kommun"><span class="header-section-number">5.4.3</span> Identifying change in kommun</a></li>
-<li><a class="nav-link" href="#identifying-household-size"><span class="header-section-number">5.4.4</span> Identifying household size</a></li>
-<li><a class="nav-link" href="#identifying-special-housing"><span class="header-section-number">5.4.5</span> Identifying special housing</a></li>
-</ul>
+<a class="nav-link" href="#specific-data-considerations"><span class="header-section-number">5.4</span> Specific data considerations</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#translating-types-of-housing-and-tenure"><span class="header-section-number">5.4.1</span> Translating types of housing and tenure</a></li></ul>
 </li>
 </ul>
 
