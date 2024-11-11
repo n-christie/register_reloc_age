@@ -1,10 +1,6 @@
 # Data Processing
 
-```{r, include=FALSE}
-library(here)
-library(tidyverse)
-library(kableExtra)
-```
+
 
 
 
@@ -64,10 +60,7 @@ First,
 we can examine the data after some initial merging and standardization of variable names.
 
 
-```{r,out.width="100%", echo=FALSE}
-
-knitr::include_graphics(here("figures", "icd_dups.png"))
-```
+<img src="figures/icd_dups.PNG" width="100%" />
 
 "lop_nr" is the unique patient identifier,
 "indatum" and "utdatum" are dates of check-in and check-out,
@@ -95,10 +88,7 @@ Duplicate ICD codes from the same visit are removed as they contain no further i
 A column documenting which specific source file the definition originates from is also included to trace specific definitions back to the corresponding Socialstyrelsen document or table.
 
 
-```{r,out.width="100%", echo=FALSE}
-
-knitr::include_graphics(here("figures", "icd_pivot.png"))
-```
+<img src="figures/icd_pivot.PNG" width="100%" />
 
 
 Tables to match primarily originate from Socialstyrelsen and can be found here:
@@ -112,10 +102,7 @@ https://www.socialstyrelsen.se/statistik-och-data/klassifikationer-och-koder/icd
 Research has identified particular medical conditions which significantly affect the chances of contracting influenza.  The following table represents the construction of flu risk categories based on ICD codes available in the data.
 
 
-```{r,out.width="100%", echo=FALSE}
-
-knitr::include_graphics(here("figures", "flu_risk_cats.png"))
-```
+<img src="figures/flu_risk_cats.PNG" width="100%" />
 
 
 
@@ -138,28 +125,19 @@ Study period 2012-2020 when data is made available from SCB from the Real estate
 
 ### Descriptive statistics
 
-```{r,out.width="100%", echo=FALSE}
-
-knitr::include_graphics(here("figures", "no_individual.png"))
-```
+<img src="figures/no_individual.PNG" width="100%" />
 
 Here we see that the vast majority of individuals who have relocated in the sample period have done so only once(82%),
 with a small proportion moving 3 times or more (about 3%)
 
 
-```{r,out.width="100%", echo=FALSE}
-
-knitr::include_graphics(here("figures", "no_individual_red.png"))
-```
+<img src="figures/no_individual_red.PNG" width="100%" />
 
 
 On the relocation level, we see that about 70% of revocations have been between some combination of Multi-dwelling and One-dwelling housing types, with a lower proportion of revocations into Special housing
 
 
-```{r,out.width="100%", echo=FALSE}
-
-knitr::include_graphics(here("figures", "age_group_housing.png"))
-```
+<img src="figures/age_group_housing.png" width="100%" />
 
 
 Here, at the housing level, we can see that those in Special housing are mostly in the 85+ category.
