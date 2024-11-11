@@ -1,49 +1,46 @@
 # Dataset Variable Explorer
 
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Load necessary libraries
-library(DT)
+library(reactable)
 library(readxl)
 library(dplyr)
+library(htmltools)
+library(purrr)
+library(writexl)
 
 # Load the dataset
 metadata <- read_excel("tables/Dataset_variable_lists.xlsx")
 
-# Add tooltips for Variable Description, Dataset Description, and Observations
-metadata <- metadata %>%
-  mutate(
-    `Variable name` = paste0(
-      "<span title='", Description, "'>", `Variable name`, "</span>"
-    ), 
-    `Dataset name` = paste0(    
-      "<span title='", `Dataset description`, "'>", `Dataset name`, "</span>"
-    ), 
-    `Location` = paste0(    
-      "<span title='", `Observations in Dataset`, " observations'>", `Location`, "</span>"
-    )
-  )
-
-# Render the DT table with export buttons and without dropdowns
-datatable(
-  metadata %>% select(`Variable name`, `Dataset name`, `Source`, `Location`),
-  escape = FALSE,                         # Allow HTML content for tooltips
-  extensions = 'Buttons',                 # Enable Buttons extension for download
-  options = list(
-    pageLength = 20,                      # Display 20 rows per page
-    autoWidth = TRUE,                     # Automatically adjust column widths
-    searchHighlight = TRUE,               # Highlight search matches
-    dom = 'Bfrtip',                       # Show buttons, filters, and pagination
-    buttons = c('csv', 'excel'),          # Enable CSV and Excel export
-    initComplete = JS(                    # Apply custom CSS styling
-      "function(settings, json) {",
-      "$('table').css({'font-size': '12px'});",
-      "$('table').css({'line-height': '1.2'});",
-      "$('table.dataTable').addClass('compact');",
-      "}"
-    )
+# Render reactable with main columns and expandable rows
+reactable(
+  metadata %>% select(`Variable name`, `Description - SWE`, `Description - ENG`), # Main columns
+  filterable = TRUE,                                  # Enable column filtering
+  searchable = TRUE,                                  # Enable global search
+  pagination = TRUE,                                  # Enable pagination
+  defaultPageSize = 20,                               # Show 20 rows per page
+  highlight = TRUE,                                   # Highlight rows on hover
+  bordered = TRUE,                                    # Add borders for a clear structure
+  striped = TRUE,                                     # Alternating row colors for readability
+  columns = list(
+    `Variable name` = colDef(name = "Variable Name"),  
+    `Description - SWE` = colDef(name = "Description (SWE)"),
+    `Description - ENG` = colDef(name = "Description (ENG)")
   ),
-  filter = "top"                          # Regular text filter for each column
+  # Set up expandable row details for additional variables including a clickable URL
+  details = function(index) {
+    row_data <- metadata[index, ]
+    htmltools::tags$div(
+      style = "padding: 10px;",
+      htmltools::tags$strong("Location: "), row_data$Location, htmltools::tags$br(),
+      htmltools::tags$strong("Source: "), row_data$Source, htmltools::tags$br(),
+      htmltools::tags$strong("Dataset description: "), row_data$`Dataset description`, htmltools::tags$br(),
+      htmltools::tags$strong("Observations in Dataset: "), row_data$`Observations in Dataset`, htmltools::tags$br(),
+      htmltools::tags$strong("Delivery file: "), row_data$`Delivery file`, htmltools::tags$br(),
+      htmltools::tags$strong("External link: "), htmltools::tags$a(href = row_data$Link, target = "_blank", row_data$Link)  # Display URL as clickable link
+    )
+  }
 )
-
 ```
 
