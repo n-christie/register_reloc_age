@@ -7,7 +7,7 @@ book_author: "Nick Christie"
 # Order of R Markdown files (chapters) in the document
 rmd_files:
   - index.Rmd                # Homepage
-  - about.Rmd                # Project Overview
+  # - about.Rmd                # Project Overview
   - data-sources.Rmd         # Data Sources and Provenance
   - data-integration.Rmd     # Data Integration and Linkage
   - data-processing.Rmd      # Data Processing and Quality Control
