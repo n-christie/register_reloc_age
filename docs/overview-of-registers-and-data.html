@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>2 Overview of Registers and Data | Register RELOC-AGE</title>
+<meta name="author" content="Nick Christie">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta property="og:title" content="2 Overview of Registers and Data | Register RELOC-AGE">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2 Overview of Registers and Data | Register RELOC-AGE">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/core-js-2.5.3/shim.min.js"></script><script src="libs/react-18.2.0/react.min.js"></script><script src="libs/react-18.2.0/react-dom.min.js"></script><script src="libs/reactwidget-1.0.0/react-tools.js"></script><link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+<script src="libs/reactable-binding-0.4.4/reactable.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.33/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="The study period in Register RELOC-AGE ranges from 1990-2020 and is comprised of 13 registers with staggered coverage which is illustrated below. More information on the registers used in the...">
+<meta property="og:description" content="The study period in Register RELOC-AGE ranges from 1990-2020 and is comprised of 13 registers with staggered coverage which is illustrated below. More information on the registers used in the...">
+<meta name="twitter:description" content="The study period in Register RELOC-AGE ranges from 1990-2020 and is comprised of 13 registers with staggered coverage which is illustrated below. More information on the registers used in the...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Register RELOC-AGE</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Register RELOC-AGE</a></li>
+<li><a class="active" href="overview-of-registers-and-data.html"><span class="header-section-number">2</span> Overview of Registers and Data</a></li>
+<li><a class="" href="data-integration-and-linkage.html"><span class="header-section-number">3</span> Data Integration and Linkage</a></li>
+<li><a class="" href="data-processing.html"><span class="header-section-number">4</span> Data Processing</a></li>
+<li><a class="" href="dataset-variable-explorer.html"><span class="header-section-number">5</span> Dataset Variable Explorer</a></li>
+<li><a class="" href="resources-and-data-access.html"><span class="header-section-number">6</span> Resources and Data Access</a></li>
+<li><a class="" href="glossary.html"><span class="header-section-number">7</span> Glossary</a></li>
+<li><a class="" href="appendix.html"><span class="header-section-number">8</span> Appendix</a></li>
+<li><a class="" href="version-history.html"><span class="header-section-number">9</span> Version history</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="overview-of-registers-and-data" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Overview of Registers and Data<a class="anchor" aria-label="anchor" href="#overview-of-registers-and-data"><i class="fas fa-link"></i></a>
+</h1>
+<p>The study period in Register RELOC-AGE ranges from 1990-2020 and is comprised of 13 registers with staggered coverage which is illustrated below.</p>
+<div class="inline-figure"><img src="figures/timeline_registers_update.png" width="100%"></div>
+<p>More information on the registers used in the study is provided below.</p>
+<div id="total-population-register-tpr" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Total Population Register (TPR)<a class="anchor" aria-label="anchor" href="#total-population-register-tpr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: [Swedish name]</li>
+<li>
+<strong>Description</strong>: Sex; birth date; civil status (duration, dates, changes); address (dates, changes); income; country of origin; citizenship; in-/emigration (dates); number of people in the dwelling; housing tenure; socioeconomic indicators of the neighborhoods (on postal code, municipal levels)</li>
+<li>
+<strong>Time Period</strong>: 1968</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>Sex</li>
+<li>Birth date</li>
+<li>Civil status (duration, dates, changes)</li>
+<li>Address (dates, changes)</li>
+<li>Income</li>
+<li>Country of origin</li>
+<li>Citizenship</li>
+<li>Immigration and emigration dates</li>
+<li>Number of people in the dwelling</li>
+<li>Housing tenure</li>
+<li>Socioeconomic indicators of neighborhoods</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: Statistics Sweden</li>
+<li>
+<strong>Link</strong>: <a href="https://example.com">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="national-patient-register-npr" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> National Patient Register (NPR)<a class="anchor" aria-label="anchor" href="#national-patient-register-npr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p><strong>Swedish Name</strong>: Patientregistret (PAR)</p></li>
+<li><p><strong>Description</strong>: The Patient Register provides the basis for statistics on diseases and treatments in Swedish specialized care. Data from the Register are used to generate statistics on, for example, compulsory psychiatric care, injuries and poisonings as well as waiting times in emergency departments.</p></li>
+<li><p><strong>Time Period</strong>: 1987-2020</p></li>
+<li>
+<p><strong>Key Variables</strong>:</p>
+<ul>
+<li>Total number of hospitalizations per month</li>
+<li>In-patient health outcomes (ICD-10 chapters such as falls, fractures, stroke, etc.)</li>
+</ul>
+</li>
+<li><p><strong>Data Provider</strong>: Socialstyrelsen</p></li>
+<li><p><strong>Link</strong>: <a href="https://www.socialstyrelsen.se/statistik-och-data/register/patientregistret/">Link to register details</a></p></li>
+</ul>
+<hr>
+</div>
+<div id="real-estate-property-register-repr" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Real Estate Property Register (REPR)<a class="anchor" aria-label="anchor" href="#real-estate-property-register-repr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: [Swedish name]</li>
+<li>
+<strong>Description</strong>: Objective housing characteristics for each dwelling: type of dwelling; price of dwelling; type of tenure; size; presence of stairs/elevator; floor; building and construction year; characteristics of the neighborhood: communal facilities (e.g., roads), green areas; date of each relocation</li>
+<li>
+<strong>Time Period</strong>: 1908</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>Type of dwelling</li>
+<li>Price of dwelling</li>
+<li>Type of tenure</li>
+<li>Size</li>
+<li>Presence of stairs/elevator</li>
+<li>Floor</li>
+<li>Building and construction year</li>
+<li>Neighborhood characteristics (communal facilities, green areas)</li>
+<li>Date of each relocation</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: Swedish Mapping, Cadastral, and Land Registration Authority</li>
+<li>
+<strong>Link</strong>: <a href="https://example.com">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="geographical-database-gd" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Geographical Database (GD)<a class="anchor" aria-label="anchor" href="#geographical-database-gd"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: [Swedish name]</li>
+<li>
+<strong>Description</strong>: DESO (demographical statistical unit); coordinates of the housing and address, etc.</li>
+<li>
+<strong>Time Period</strong>: 1952</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>DESO (demographic statistical unit)</li>
+<li>Coordinates of the housing and address</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: Statistics Sweden</li>
+<li>
+<strong>Link</strong>: <a href="https://example.com">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="death-cause-register-dr" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Death Cause Register (DR)<a class="anchor" aria-label="anchor" href="#death-cause-register-dr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p><strong>Swedish Name</strong>: Dödsorsaksregistret (DORS)</p></li>
+<li><p><strong>Description</strong>: The National Cause of Death Register provides the basis for official cause-of-death statistics in Sweden. The Register’s data are also used to describe the health of the population, as a basis for health care interventions and for research.</p></li>
+<li><p><strong>Time Period</strong>: 1990-2020</p></li>
+<li>
+<p><strong>Key Variables</strong>:</p>
+<ul>
+<li>Death cause</li>
+<li>Date of death</li>
+</ul>
+</li>
+<li><p><strong>Data Provider</strong>: Socialstyrelsen</p></li>
+<li><p><strong>Link</strong>: <a href="https://www.socialstyrelsen.se/statistik-och-data/register/dodsorsaksregistret/">Link to register details</a></p></li>
+</ul>
+<hr>
+</div>
+<div id="longitudinal-integrated-database-for-health-insurance-and-labour-market-studies-lisa" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> Longitudinal Integrated Database for Health Insurance and Labour Market Studies (LISA)<a class="anchor" aria-label="anchor" href="#longitudinal-integrated-database-for-health-insurance-and-labour-market-studies-lisa"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: [Swedish name]</li>
+<li>
+<strong>Description</strong>: Education level, income, social insurance</li>
+<li>
+<strong>Time Period</strong>: 1990</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>Education level</li>
+<li>Income</li>
+<li>Social insurance</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: Statistics Sweden</li>
+<li>
+<strong>Link</strong>: <a href="https://example.com">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="drug-prescription-register-dpr" class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> Drug Prescription Register (DPR)<a class="anchor" aria-label="anchor" href="#drug-prescription-register-dpr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: [Swedish name]</li>
+<li>
+<strong>Description</strong>: Drug prescriptions for chronic illnesses (ATC code, dose, and date): endocrine; cardiovascular; hepatic; renal or neurological/neuromuscular</li>
+<li>
+<strong>Time Period</strong>: 2005</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>ATC code</li>
+<li>Dose</li>
+<li>Prescription date</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: National Board of Health and Welfare</li>
+<li>
+<strong>Link</strong>: <a href="https://example.com">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="swedish-intensive-care-register-siri" class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> Swedish Intensive Care Register (SIRI)<a class="anchor" aria-label="anchor" href="#swedish-intensive-care-register-siri"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: [Swedish name]</li>
+<li>
+<strong>Description</strong>: Intensive care for laboratory-confirmed influenza and (since 2020) COVID-19.</li>
+<li>
+<strong>Time Period</strong>: 2001</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>Intensive care for laboratory-confirmed influenza</li>
+<li>Intensive care for COVID-19 (since 2020)</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: Swedish Intensive Care Registry</li>
+<li>
+<strong>Link</strong>: <a href="https://example.com">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="swedish-internet-based-surveillance-system-for-communicable-diseases-sminet" class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> Swedish Internet-Based Surveillance System for Communicable Diseases (SmiNet)<a class="anchor" aria-label="anchor" href="#swedish-internet-based-surveillance-system-for-communicable-diseases-sminet"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: [Swedish name]</li>
+<li>
+<strong>Description</strong>: Laboratory-confirmed influenza and (since 2020) COVID-19</li>
+<li>
+<strong>Time Period</strong>: 1997 and since 2004 for COVID-19</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>Laboratory-confirmed influenza</li>
+<li>Laboratory-confirmed COVID-19 (since 2020)</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: Public Health Agency of Sweden</li>
+<li>
+<strong>Link</strong>: <a href="https://example.com">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="municipal-health-care-register-mhcr" class="section level2" number="2.10">
+<h2>
+<span class="header-section-number">2.10</span> Municipal Health Care Register (MHCR)<a class="anchor" aria-label="anchor" href="#municipal-health-care-register-mhcr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: Registret över insatser inom kommunal hälso- och sjukvård (HSL)</li>
+<li>
+<strong>Description</strong>: The Register contains information on all persons who have received health care for which the municipality is responsible under the Health and Medical Services Act. The Register covers around 400,000 people per year.
+Until 2018, the Register included only information on persons who have received any intervention in the municipal health care system, broken down per calendar month. From 2019, the Register is supplemented by information on which patient-related procedures were carried out by authorised staff with the municipality as the care provider. Procedures are classified at the most detailed level of the Classification of Health Care Procedures (KVÅ). In addition, municipalities provide information regarding the date on which the procedure was performed and by which authorised professional group. From 2019 onwards, all data are provided to the Register on a monthly basis.
+Home help and service type and number of hours/month/year: escorting, replace the relative, personal care, meal delivery, security alarm, daytime activities; short-term vs. long-term.</li>
+<li>
+<strong>Time Period</strong>: 2007-2020</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>Care received</li>
+<li>Date of care</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: Socialstyrelsen</li>
+<li>
+<strong>Link</strong>: <a href="https://www.socialstyrelsen.se/statistik-och-data/register/kommunal-halso-och-sjukvard/">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="interventions-for-elderly-and-people-with-disabilities-register-iepdr" class="section level2" number="2.11">
+<h2>
+<span class="header-section-number">2.11</span> Interventions for Elderly and People with Disabilities Register (IEPDR)<a class="anchor" aria-label="anchor" href="#interventions-for-elderly-and-people-with-disabilities-register-iepdr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p><strong>Swedish Name</strong>: Registret över insatser till äldre och personer med funktionsnedsättning (SOL)</p></li>
+<li><p><strong>Description</strong>: The Register covers the elderly and persons with physical, mental or intellectual impairments who receive municipal care under the Social Services Act. The Register contains data on about 400,000 people per data collection. It only concerns decisions that have been implemented (previously, all decisions made were included, but this was changed in 2012). The Register does not contain information on the number of registered places in nursing homes.</p></li>
+<li><p><strong>Time Period</strong>: 2007-2020</p></li>
+<li>
+<p><strong>Key Variables</strong>:</p>
+<ul>
+<li>Home help and service type</li>
+<li>Hours of care per month/year</li>
+<li>types of care: escorting, replace the relative, personal care, meal delivery, security alarm, daytime activities.</li>
+<li>Short-term vs. long-term care</li>
+</ul>
+</li>
+<li><p><strong>Data Provider</strong>: Socialstyrelsen</p></li>
+<li><p><strong>Link</strong>: <a href="https://www.socialstyrelsen.se/statistik-och-data/register/aldre-och-personer-med-funktionsnedsattning/">Link to register details</a></p></li>
+</ul>
+<hr>
+</div>
+<div id="apartment-register-ar" class="section level2" number="2.12">
+<h2>
+<span class="header-section-number">2.12</span> Apartment Register (AR)<a class="anchor" aria-label="anchor" href="#apartment-register-ar"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Swedish Name</strong>: [Swedish name]</li>
+<li>
+<strong>Description</strong>: Dwelling type; number of rooms; dwelling unit size; kitchen type</li>
+<li>
+<strong>Time Period</strong>: 2012</li>
+<li>
+<strong>Key Variables</strong>:
+<ul>
+<li>Dwelling type</li>
+<li>Number of rooms</li>
+<li>Dwelling unit size</li>
+<li>Kitchen type</li>
+</ul>
+</li>
+<li>
+<strong>Data Provider</strong>: Swedish National Board of Housing, Building and Planning</li>
+<li>
+<strong>Link</strong>: <a href="https://example.com">Link to register details</a>
+</li>
+</ul>
+<hr>
+</div>
+<div id="scania-outdoor-environment-database-scout" class="section level2" number="2.13">
+<h2>
+<span class="header-section-number">2.13</span> Scania Outdoor Environment Database (ScOut)<a class="anchor" aria-label="anchor" href="#scania-outdoor-environment-database-scout"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p><strong>Swedish Name</strong>: ScOut</p></li>
+<li><p><strong>Description</strong>: To be able to study the effects and complexity of multiple perceived outdoor environment characteristics on health and well-being and reduce single-source bias, we compiled a database based on the available resources in Scania, southern Sweden, 2008–2019, including area-aggregated assessments of 24 characteristics. We found that PSDs were robust to seasonal changes. We observed clear visible patterns between different characteristics, with correlations between them ranging from negligible to strong, confirming the complexity of the perceived environment. ScOut is a unique data source in its nature and size, in Sweden and abroad, covering areas where approximately 97% of the population live.</p></li>
+<li><p><strong>Time Period</strong>: See link for details</p></li>
+<li><p><strong>Key Variables</strong>: See link for details</p></li>
+<li><p><strong>Data Provider</strong>: See link for details</p></li>
+<li><p><strong>Link</strong>: <a href="https://www.sciencedirect.com/science/article/pii/S0013935122023350?via%3Dihub">Link to register details</a></p></li>
+</ul>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Register RELOC-AGE</a></div>
+<div class="next"><a href="data-integration-and-linkage.html"><span class="header-section-number">3</span> Data Integration and Linkage</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#overview-of-registers-and-data"><span class="header-section-number">2</span> Overview of Registers and Data</a></li>
+<li><a class="nav-link" href="#total-population-register-tpr"><span class="header-section-number">2.1</span> Total Population Register (TPR)</a></li>
+<li><a class="nav-link" href="#national-patient-register-npr"><span class="header-section-number">2.2</span> National Patient Register (NPR)</a></li>
+<li><a class="nav-link" href="#real-estate-property-register-repr"><span class="header-section-number">2.3</span> Real Estate Property Register (REPR)</a></li>
+<li><a class="nav-link" href="#geographical-database-gd"><span class="header-section-number">2.4</span> Geographical Database (GD)</a></li>
+<li><a class="nav-link" href="#death-cause-register-dr"><span class="header-section-number">2.5</span> Death Cause Register (DR)</a></li>
+<li><a class="nav-link" href="#longitudinal-integrated-database-for-health-insurance-and-labour-market-studies-lisa"><span class="header-section-number">2.6</span> Longitudinal Integrated Database for Health Insurance and Labour Market Studies (LISA)</a></li>
+<li><a class="nav-link" href="#drug-prescription-register-dpr"><span class="header-section-number">2.7</span> Drug Prescription Register (DPR)</a></li>
+<li><a class="nav-link" href="#swedish-intensive-care-register-siri"><span class="header-section-number">2.8</span> Swedish Intensive Care Register (SIRI)</a></li>
+<li><a class="nav-link" href="#swedish-internet-based-surveillance-system-for-communicable-diseases-sminet"><span class="header-section-number">2.9</span> Swedish Internet-Based Surveillance System for Communicable Diseases (SmiNet)</a></li>
+<li><a class="nav-link" href="#municipal-health-care-register-mhcr"><span class="header-section-number">2.10</span> Municipal Health Care Register (MHCR)</a></li>
+<li><a class="nav-link" href="#interventions-for-elderly-and-people-with-disabilities-register-iepdr"><span class="header-section-number">2.11</span> Interventions for Elderly and People with Disabilities Register (IEPDR)</a></li>
+<li><a class="nav-link" href="#apartment-register-ar"><span class="header-section-number">2.12</span> Apartment Register (AR)</a></li>
+<li><a class="nav-link" href="#scania-outdoor-environment-database-scout"><span class="header-section-number">2.13</span> Scania Outdoor Environment Database (ScOut)</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Register RELOC-AGE</strong>" was written by Nick Christie. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
